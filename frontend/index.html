@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Rekun</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Jeu Rekun</h1>
+    </header>
+
+    <!-- Gestion des joueurs -->
+    <div id="playerManagement">
+        <h2>Gestion des Joueurs</h2>
+        <button onclick="fetchPlayers()">Actualiser les Joueurs</button>
+        <ul id="playerList"></ul>
+    </div>
+      
+    <!-- Classement des scores -->
+    <section id="scoreboard">
+        <h2>Classement</h2>
+        <ul id="scoreList" class="score-list"></ul>
+    </section>
+
+    <!-- Boutons de contrôle -->
+    <section id="controls">
+        <button onclick="runGameAutomatically()">Lancer une Partie (Étape par Étape Automatique)</button>
+        <button onclick="fetchScores()">Actualiser le Classement</button>
+    </section>
+    
+    <section id="players-remaining">
+        <h2>Joueurs Restants</h2>
+        <p id="remaining-players-count">Joueurs restants : 0</p>
+    </section>
+    
+    <!-- Section de l’arène -->
+    <section id="arena">
+        <h2>Arène</h2>
+        <div id="grid" class="grid"></div>
+    </section>
+
+    <footer>
+        <p>Créé par [Votre Nom] - 2024</p>
+    </footer>
+</body>
+</html>

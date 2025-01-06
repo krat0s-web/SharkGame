@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Connexion Joueur</title>
+  <link rel="stylesheet" href="styleLogin.css">
+</head>
+<body>
+  <h1>Soumission des Commandes</h1>
+  <form id="submit-form">
+    <label>ID du Joueur :</label>
+    <input type="text" id="playerId" required><br>
+    <label>Commandes :</label>
+    <input type="text" id="commands" required><br>
+    <button type="submit">Soumettre</button>
+  </form>
+  <div id="response" style="color: red;"></div>
+
+  <h3>Navigation</h3>
+  <button onclick="window.location.href='/'">Retour à la Connexion</button>
+  <button onclick="window.location.href='guide.html'">Guide</button> <!-- Bouton Guide -->
+
+  <script>
+    document.getElementById("submit-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const playerId = document.getElementById("playerId").value;
+  const commands = document.getElementById("commands").value;
+
+  try {
+    const response = await fetch("http://127.0.0.1:5000/submit_player", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ player_id: playerId, commands: commands }),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      document.getElementById("response").textContent = `Succès : ${result.status}`;
+      document.getElementById("response").style.color = "green";
+    } else {
+      document.getElementById("response").textContent = `Erreur : ${result.error}`;
+      document.getElementById("response").style.color = "red";
+    }
+  } catch (error) {
+    console.error("Erreur :", error);
+    document.getElementById("response").textContent = "Une erreur s'est produite.";
+    document.getElementById("response").style.color = "red";
+  }
+});
+
+  </script>
+</body>
+</html>

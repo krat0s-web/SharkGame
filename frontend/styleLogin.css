@@ -1,0 +1,190 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #d1e3f0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Boutons */
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 5px 0;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: 3px solid #2980b9;
+}
+
+/* Messages d'erreur */
+#error, #response {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+/* Conteneur principal pour le guide */
+.guide-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #d1e3f0;
+}
+
+/* Titre principal */
+.guide-container h1 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Paragraphe descriptif */
+.guide-container p {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Liste des commandes */
+.guide-container ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.guide-container ul li {
+    background-color: #f0f8ff;
+    border: 1px solid #d1e3f0;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #1565c0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mots en gras dans les commandes */
+.guide-container ul li strong {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Boutons de navigation */
+.guide-container button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #64b5f6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.guide-container button:hover {
+    background-color: #42a5f5;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.guide-container button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .guide-container {
+        padding: 15px;
+    }
+
+    .guide-container h1 {
+        font-size: 1.8em;
+    }
+
+    .guide-container ul li {
+        font-size: 1em;
+    }
+
+    .guide-container button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}

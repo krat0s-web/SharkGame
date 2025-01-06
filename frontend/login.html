@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="styleLogin.css">
+
+</head>
+<body>
+  <h1>Connexion Administrateur</h1>
+  <form id="login-form">
+    <label>Nom d'utilisateur :</label>
+    <input type="text" id="username" required placeholder="Nom d'utilisateur"><br>
+    <label>Mot de passe :</label>
+    <input type="password" id="password" required placeholder="Mot de passe"><br>
+    <button type="submit">Se connecter</button>
+  </form>
+  <div id="error" style="color: red;"></div>
+
+  <h2>Ou</h2>
+  <button onclick="window.location.href='/player_login'">Connexion en tant que joueur</button> <!-- Bouton joueur -->
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const response = await fetch("/authenticate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password })
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+          window.location.href = result.redirect;
+        } else {
+          document.getElementById("error").innerText = result.error || "Erreur de connexion.";
+        }
+      } catch (error) {
+        console.error("Erreur :", error);
+        document.getElementById("error").innerText = "Une erreur s'est produite.";
+      }
+    });
+  </script>
+</body>
+</html>
