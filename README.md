@@ -1,4 +1,4 @@
-guide détaillé pour installer Flask et lancer votre jeu sur le terminal en utilisant Flas : 
+guide détaillé pour installer Flask et lancer votre jeu sur le terminal en utilisant Flask : 
 
 Étape 1 : Installer Python
 
